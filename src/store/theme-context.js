@@ -9,6 +9,15 @@ const theme = createTheme({
   palette: {
     primary: { main: deepPurple[900] },
   },
+  typography: {
+    special: {
+      fontFamily: "Cinzel",
+      fontWeight: "400",
+      fontSize: "1rem",
+      lineHeight: "1.75",
+      letterSpacing: "0.00938em",
+    },
+  },
 });
 
 const StyleProvider = (props) => {
