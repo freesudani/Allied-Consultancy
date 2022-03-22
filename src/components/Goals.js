@@ -15,6 +15,7 @@ import imagesvg8 from "../images/lacoste-1.svg";
 const useStyles = makeStyles({
   goals: {
     paddingTop: "2rem",
+    paddingBottom: "3rem",
     width: "100vw",
     backgroundColor: "#e1f5fe",
   },

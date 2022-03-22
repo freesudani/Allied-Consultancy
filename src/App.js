@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import CssBaseline from "@mui/material/CssBaseline";
 import Goals from "./components/Goals";
+import Services from "./components/Services";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Navbar />
       <Header />
       <Goals />
+      <Services />
     </>
   );
 }
