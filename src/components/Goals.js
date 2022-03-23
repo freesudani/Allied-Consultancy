@@ -49,6 +49,7 @@ const Goals = () => {
     <Box className={classes.goals}>
       <Grid
         container
+        xs={12}
         spacing={5}
         direction="row-reverse"
         justifyContent="center"
@@ -66,7 +67,7 @@ const Goals = () => {
             Our Services
           </Typography>
           <Typography
-            variant="subtitle1"
+            variant="body1"
             textAlign="justify"
             color="primary"
             className={classes.paragraph}
@@ -97,7 +98,7 @@ const Goals = () => {
             Our Process
           </Typography>
           <Typography
-            variant="subtitle1"
+            variant="body1"
             textAlign="justify"
             color="primary"
             className={classes.paragraph}

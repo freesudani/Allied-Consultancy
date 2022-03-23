@@ -11,6 +11,7 @@ const theme = createTheme({
     icon: { main: "#039be5" },
   },
   typography: {
+    subtitle1: { fontWeight: "600" },
     special: {
       fontFamily: "Cinzel",
       fontWeight: "400",

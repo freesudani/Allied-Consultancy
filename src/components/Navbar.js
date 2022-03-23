@@ -1,14 +1,8 @@
 import React from "react";
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  Typography,
-  Button,
-  IconButton,
-} from "@mui/material";
+import { AppBar, Box, Toolbar, Button, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import makeStyles from "@mui/styles/makeStyles/makeStyles";
+import logo from "../images/logoimage.png";
 
 const useStyles = makeStyles({
   menuicon: {
@@ -41,13 +35,13 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
           <Box className={classes.icon}>
-            <Typography>Icon</Typography>
+            <img src={logo} alt="logo" />
           </Box>
           <Box sx={{ flexGrow: 1 }}>
             <Button>Services</Button>
             <Button>Process</Button>
             <Button>Clients</Button>
-            <Button>Team</Button>
+            <Button style={{ color: "#3e7880" }}>Team</Button>
           </Box>
           <Button variant="outlined" size="large">
             Request A Call Back
