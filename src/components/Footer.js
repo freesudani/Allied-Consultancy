@@ -2,31 +2,47 @@ import React from "react";
 import { Grid, Typography, Box } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles/makeStyles";
 import logoimage from "../images/logoimagewhite.png";
-import { Translate } from "@mui/icons-material";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   footer: {
-    height: "55vh",
+    height: "65vh",
     paddingTop: "4rem",
     paddingBottom: "3rem",
+    [theme.breakpoints.down("xl")]: {
+      height: "55vh",
+    },
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "2rem",
+      paddingLeft: "3rem",
+    },
   },
 
   logo: {
     width: "7rem",
     transform: "Translate(-1.5rem , -2rem)",
+    [theme.breakpoints.down("md")]: {
+      transform: "Translate(0rem , -0.5rem)",
+    },
   },
-});
+
+  margin: {
+    [theme.breakpoints.down("md")]: {
+      marginTop: "1rem",
+    },
+  },
+}));
 
 const Footer = () => {
   const classes = useStyles();
+
   return (
     <Box className={classes.footer}>
       <Grid container xs={12}>
-        <Grid item xs={1} />
-        <Grid item xs={1}>
+        <Grid item xs={12} md={1} />
+        <Grid item xs={12} md={1}>
           <img src={logoimage} alt="alt" className={classes.logo} />
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={12} md={2}>
           <Typography variant="subtitle1" color="primary" gutterBottom>
             VANCOUVER
           </Typography>
@@ -45,9 +61,14 @@ const Footer = () => {
             Friedrichstraße 68 10117 Berlin, Germany
           </Typography>
         </Grid>
-        <Grid item xs={1} />
-        <Grid item xs={2}>
-          <Typography variant="subtitle1" color="primary" gutterBottom>
+        <Grid item xs={12} md={1} />
+        <Grid item xs={12} md={2}>
+          <Typography
+            variant="subtitle1"
+            color="primary"
+            gutterBottom
+            className={classes.margin}
+          >
             FOLLOW US ON
           </Typography>
           <Typography variant="body2" color="primary" gutterBottom>
@@ -63,9 +84,14 @@ const Footer = () => {
             Instagram
           </Typography>
         </Grid>
-        <Grid item xs={1} />
-        <Grid item xs={3}>
-          <Typography variant="subtitle1" color="primary" gutterBottom>
+        <Grid item xs={12} md={1} />
+        <Grid item xs={12} md={3}>
+          <Typography
+            variant="subtitle1"
+            color="primary"
+            gutterBottom
+            className={classes.margin}
+          >
             ABOUT US
           </Typography>
           <Typography variant="body2" color="primary" gutterBottom>
@@ -81,7 +107,7 @@ const Footer = () => {
             © 2018 Unbounce All rights reserved
           </Typography>
         </Grid>
-        <Grid item xs={1} />
+        <Grid item xs={12} md={1} />
       </Grid>
     </Box>
   );

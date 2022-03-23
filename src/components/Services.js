@@ -12,20 +12,42 @@ import {
   Typography,
 } from "@mui/material";
 import { countryList } from "../data/countries";
+import { useTheme, useMediaQuery } from "@mui/material";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   services: {
     display: "flex",
     paddingTop: "2rem",
     backgroundColor: "#e1f5fe",
     borderTop: "1px solid #e0e0e0",
     borderBottom: "1px solid #e0e0e0",
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+    },
   },
   rightside: {
     width: "50vw",
     paddingTop: "5rem",
     paddingBottom: "3rem",
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "2rem",
+      width: "100vw",
+    },
   },
+
+  textfield: {
+    marginTop: "1.2rem",
+    [theme.breakpoints.down("md")]: {
+      marginTop: "1.5rem",
+    },
+  },
+
+  parag: {
+    [theme.breakpoints.down("md")]: {
+      marginTop: "2rem",
+    },
+  },
+
   leftside: {
     width: "50vw",
     paddingTop: "5rem",
@@ -33,11 +55,18 @@ const useStyles = makeStyles({
     paddingRight: "4rem",
     paddingLeft: "4rem",
     borderRight: "1px solid #e0e0e0",
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "2rem",
+      width: "100vw",
+    },
   },
-});
+}));
 
 const Services = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const MQmd = useMediaQuery(theme.breakpoints.down("md")); //900px
+
   return (
     <Box className={classes.services}>
       <Box className={classes.leftside}>
@@ -52,37 +81,37 @@ const Services = () => {
           label="First Name"
           variant="standard"
           fullWidth
-          style={{ marginTop: "1.2rem" }}
+          className={classes.textfield}
         />
         <TextField
           id="standard-basic"
           label="Last Name"
           variant="standard"
           fullWidth
-          style={{ marginTop: "1.2rem" }}
+          className={classes.textfield}
         />
         <TextField
           id="standard-basic"
           label="Email"
           variant="standard"
           fullWidth
-          style={{ marginTop: "1.2rem" }}
+          className={classes.textfield}
         />
         <TextField
           id="standard-basic"
           label="Phone Number"
           variant="standard"
           fullWidth
-          style={{ marginTop: "1.2rem" }}
+          className={classes.textfield}
         />
         <TextField
           id="standard-basic"
           label="Company"
           variant="standard"
           fullWidth
-          style={{ marginTop: "1.2rem" }}
+          className={classes.textfield}
         />
-        <FormControl fullWidth style={{ marginTop: "1.2rem" }}>
+        <FormControl fullWidth className={classes.textfield}>
           <InputLabel variant="standard" htmlFor="uncontrolled-native">
             Select A Country
           </InputLabel>
@@ -103,7 +132,8 @@ const Services = () => {
         <Button
           size="large"
           variant="contained"
-          style={{ marginTop: "1.5rem" }}
+          fullWidth={MQmd}
+          className={classes.textfield}
         >
           Contained
         </Button>

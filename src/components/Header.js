@@ -6,10 +6,23 @@ import { motion } from "framer-motion";
 import { arrowVariant } from "../animations/variants";
 import headerbg from "../images/pexels-gradienta-7130497.jpg";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   header: {
     background: `url(${headerbg})`,
-    height: "118vh",
+    height: "120vh",
+    [theme.breakpoints.down("xl")]: {
+      height: "118vh",
+    },
+    [theme.breakpoints.down("lg")]: {
+      height: "150vh",
+    },
+    [theme.breakpoints.down("md")]: {
+      height: "135vh",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "100vw",
+      height: "165vh",
+    },
   },
 
   title: {
@@ -21,16 +34,20 @@ const useStyles = makeStyles({
     marginLeft: "auto",
     marginRight: "auto",
     width: "50%",
+    [theme.breakpoints.down("md")]: {
+      width: "70%",
+    },
   },
 
   arrow: {
     textAlign: "center",
     marginTop: "2.8rem",
   },
-});
+}));
 
 const Header = () => {
   const classes = useStyles();
+
   return (
     <Box className={classes.header}>
       <Typography
